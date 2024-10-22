@@ -1,6 +1,3 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Deploy Published ASP.Net Core app to Azure Web App - zakariacontacts
 
 on:
@@ -12,6 +9,10 @@ on:
 jobs:
   deploy:
     runs-on: windows-latest
+
+    permissions:  # Add write permission for id-token
+      id-token: write
+      contents: read
 
     steps:
       - uses: actions/checkout@v4
